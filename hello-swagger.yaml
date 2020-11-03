@@ -1,0 +1,90 @@
+openapi: 3.0.1
+info:
+  title: HelloWorld
+  version: v1
+servers:
+  - url: /
+x-wso2-disable-security: true
+paths:
+  /*:
+    get:
+      responses:
+        '200':
+          description: OK
+      x-auth-type: Application & Application User
+      x-throttling-tier: Unlimited
+    put:
+      responses:
+        '200':
+          description: OK
+      x-auth-type: Application & Application User
+      x-throttling-tier: Unlimited
+    post:
+      responses:
+        '200':
+          description: OK
+      x-auth-type: Application & Application User
+      x-throttling-tier: Unlimited
+    delete:
+      responses:
+        '200':
+          description: OK
+      x-auth-type: Application & Application User
+      x-throttling-tier: Unlimited
+    patch:
+      responses:
+        '200':
+          description: OK
+      x-auth-type: Application & Application User
+      x-throttling-tier: Unlimited
+x-wso2-auth-header: Authorization
+x-wso2-cors:
+  corsConfigurationEnabled: false
+  accessControlAllowOrigins:
+    - '*'
+  accessControlAllowCredentials: false
+  accessControlAllowHeaders:
+    - authorization
+    - Access-Control-Allow-Origin
+    - Content-Type
+    - SOAPAction
+    - apikey
+    - testKey
+  accessControlAllowMethods:
+    - GET
+    - PUT
+    - POST
+    - DELETE
+    - PATCH
+    - OPTIONS
+x-wso2-production-endpoints:
+  urls:
+    - 'http://localhost:8080/hello/sayHello'
+  type: http
+  advanceEndpointConfig:
+    timeoutInMillis: 7000
+    # retryConfig:
+    #   count: 1
+    #   intervalInMillis: 1000
+    #   backOffFactor: 1.2
+    #   statusCodes:
+    #     - 504
+    # circuitBreaker:
+    #     rollingWindow:
+    #       requestVolumeThreshold: 1
+    #       timeWindowInMillis: 60000
+    #       bucketSizeInMillis: 2000
+    #     failureThreshold: 0.2
+    #     resetTimeInMillis: 10000
+    #     statusCodes:
+    #       - 500
+x-wso2-sandbox-endpoints:
+  urls:
+    - 'http://localhost:8080/hello/sayHello'
+  type: http
+x-wso2-basePath: /hello/v1
+x-wso2-transports:
+  - http
+x-wso2-response-cache:
+  enabled: false
+  cacheTimeoutInSeconds: 300
